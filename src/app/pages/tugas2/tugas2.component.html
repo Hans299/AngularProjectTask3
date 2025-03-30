@@ -1,0 +1,39 @@
+<p>tugas2 works!</p>
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<div>Tugas Week 2</div>
+
+<!-- <div *ngFor="let data of tugas2">   looping dalam angular
+    {{ data.nama }}
+    {{ data.semester }}
+    {{ data.MataKuliah }}
+    {{ data.status }}
+</div> -->
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Semester</th>
+        <th>Mata Kuliah</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let data of tugas2">
+        <td>{{ data.nama }}</td>
+        <td>{{ data.semester }}</td>
+        <td>{{ data.MataKuliah }}</td>
+        <td *ngFor="let cekStatus of data.status">
+            <span *ngif="cekStatus.status===aktif">{{ cekStatus.status | lowercase}}></span>
+        </td>
+    </tr>
