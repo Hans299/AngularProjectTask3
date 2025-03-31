@@ -24,16 +24,18 @@
 
 <table>
     <tr>
+        <th>No</th>
         <th>Name</th>
         <th>Semester</th>
         <th>Mata Kuliah</th>
         <th>Status</th>
     </tr>
-    <tr *ngFor="let data of tugas2">
+    <tr *ngFor="let data of tugas2 let i=index;">
+        <td>{{ i+1 }}</td>
         <td>{{ data.nama }}</td>
         <td>{{ data.semester }}</td>
         <td>{{ data.MataKuliah }}</td>
         <td *ngFor="let cekStatus of data.status">
-            <span *ngif="cekStatus.status===aktif">{{ cekStatus.status | lowercase}}></span>
+            <span *ngif="cekStatus.status===aktif">{{ cekStatus.status }}></span>
         </td>
     </tr>
