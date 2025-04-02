@@ -58,5 +58,6 @@ export class Tugas2Component {
       MataKuliah:'Sidang',
     },
   ]
-  status:string='Aktif'
+  Cekstatus:string='Izin'
+  a:string='Hans'
 }
